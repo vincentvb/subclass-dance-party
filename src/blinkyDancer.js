@@ -13,3 +13,10 @@ MakeBlinkyDancer.prototype.step = function () {
   MakeDancer.prototype.step.call(this);
   this.$node.toggle();
 }
+
+
+/*
+MakeBlinkyDancer.prototype.lineup = function() {
+	MakeDancer.prototype.setPosition(auto, 0)
+}
+*/

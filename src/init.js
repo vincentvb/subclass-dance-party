@@ -19,6 +19,7 @@ $(document).ready(function() {
     // get the maker function for the kind of dancer we're supposed to make
     var dancerMakerFunction = window[dancerMakerFunctionName];
 
+
     // make a dancer with a random position
 
     var dancer = new dancerMakerFunction(
@@ -26,6 +27,34 @@ $(document).ready(function() {
       $("body").width() * Math.random(),
       Math.random() * 1000
     );
+    window.dancers.push(dancer)
     $('body').append(dancer.$node);
   });
+
+  $('.lineUpButton').on('click', function(event) {
+      var topBlinky = 30;
+      var topSuperHero = 30;
+      var topBatman = 30;
+      var dancersBlink = window.dancers.filter(function(x) {return x.$node.hasClass('blinky')});
+      var dancersHero = window.dancers.filter(function(x) {return x.$node.hasClass('superHero')});
+      var dancersBat = window.dancers.filter(function(x) {return x.$node.hasClass('batman')});
+      for (var i = 0; i < dancersBlink.length; i++) {
+        dancersBlink[i].lineup(topBlinky, 0);
+        topBlinky +=100
+      }
+      for (var i = 0; i < dancersHero.length; i++) {
+        dancersHero[i].lineup(topSuperHero, 500)
+        topSuperHero += 150
+      }
+      for (var i = 0; i < dancersBat.length; i++) {
+        dancersBat[i].lineup(topBatman, 1000)
+        topBatman += 150
+      }
+  })
+  $(document).on('mouseover', 'img', function(event) {
+    $(this).toggleClass("newClass");
+  })
+  $(document).on('mouseleave', 'img', function(event) {
+    $(this).toggleClass("newClass");
+  })
 });
