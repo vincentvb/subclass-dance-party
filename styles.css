@@ -2,6 +2,10 @@ body, html{
   height:100%;
 }
 body{
+  background-image: url("https://cdn.shutterstock.com/shutterstock/videos/1379812/thumb/1.jpg");
+  background-size:     cover;                      /* <------ */
+  background-repeat:   no-repeat;
+  background-position: center center;  
   margin: 0px;
   background-color:#444;
   font-size: 18px;
@@ -20,8 +24,12 @@ body, a:link, a:visited, a:active{
 .title{
   background-color: #777;
 }
-.dancer{
-  border:10px solid red;
-  border-radius:10px;
-  position:absolute;
+
+img {
+  height: 150px;
+  width: 250px;
+}
+
+.blinky, .batman, .superHero {
+  position: absolute;
 }
